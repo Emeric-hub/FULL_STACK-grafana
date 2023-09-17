@@ -71,11 +71,11 @@ services:
     #   - monitor
     ports:
       - 3000:3000
-
     labels:
       org.label-schema.group: "monitoring"
     extra_hosts:
       - "prometheus:${REMOTE_PROMETHEUS_IP:-host-gateway}"
+      - "host.docker.internal:host-gateway"
 
   pushgateway:
     image: prom/pushgateway:v1.2.0
